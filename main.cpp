@@ -326,7 +326,7 @@ void admin(void) {//اکانت ادمین
 				clrscr();
 				char f1[20];
 				ni:printf("\n1-ALL\n\n2-Choose Doctor\n");
-				printf("\nenter you'r slection");
+				printf("\nenter you'r slection : ");
 				gets_s(f1);
 				int f2 = atoi(f1);
 				if (f2 == 1) {
@@ -1348,9 +1348,10 @@ void dr(struct ndoctor* temp)
 ///*********************************************************************
 int filetoarr(void) {//تابع از فایل تایم به ارایه
 	FILE* fp;
-	fp = fopen("time.bin", "rb");
+	fp = fopen("time.bin", "ab+");
 	if (!fp) {
 		printf("can not open the file !!");
+		exit(0);
 	}
 	int num = 0;
 	int i = 0;
@@ -1382,7 +1383,7 @@ void to_file_nobt(void)// این تابع از ارایه نوبت میریزه 
 void file_to_arr_nobat(void)/// این تابع از فایل نوبت خونده وبه ارایه اضافه میکنه
 {
 	FILE* fp;
-	fp = fopen("nobat.bin", "rb");
+	fp = fopen("nobat.bin", "ab+");
 	if (!fp) {
 		printf("can not open the file !!");
 	}
